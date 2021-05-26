@@ -44,7 +44,7 @@ jobs:
       - id: bump
         uses: zwaldowski/match-label-action@v1
         with:
-          allowed: bug,enhancement  
+          allowed: major,enhancement,bug  
       - uses: zwaldowski/semver-release-action@v1
         with:
           bump: ${{ steps.bump.outputs.match }}
