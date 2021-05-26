@@ -40,10 +40,8 @@ jobs:
       - id: bump
         uses: zwaldowski/match-label-action@v2
         with:
-          allowed_multiple: >
-            major
-            minor
-            patch
+          allowed: major minor enhancement
+
       - uses: zwaldowski/semver-release-action@v1
         with:
           bump: ${{ steps.bump.outputs.match }}
