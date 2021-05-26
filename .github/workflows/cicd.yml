@@ -38,7 +38,7 @@ jobs:
       DEBUG: "semantic_release.*"
     steps:
       - id: bump
-        uses: jeremytee97/match-label-action@v6
+        uses: jeremytee97/match-label-action@v7
         with:
           allowed: major,minor,enhancement
 
