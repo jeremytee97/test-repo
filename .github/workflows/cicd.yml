@@ -38,7 +38,7 @@ jobs:
       DEBUG: "semantic_release.*"
     steps:
       - id: bump
-        uses: zwaldowski/match-label-action@v1
+        uses: zwaldowski/match-label-action@v2
         with:
           allowed_multiple: >
             major
