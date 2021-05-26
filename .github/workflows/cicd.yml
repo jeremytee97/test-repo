@@ -40,9 +40,9 @@ jobs:
       - id: bump
         uses: zwaldowski/match-label-action@v2
         with:
-          allowed: major minor enhancement
+          allowed: major,minor,enhancement
 
-      - uses: zwaldowski/semver-release-action@v1
+      - uses: zwaldowski/semver-release-action@v2
         with:
           bump: ${{ steps.bump.outputs.match }}
           github_token: ${{ secrets.GITHUB_TOKEN }}
