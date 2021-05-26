@@ -40,7 +40,7 @@ jobs:
       - id: bump
         uses: zwaldowski/match-label-action@v1
         with:
-          allowed: >
+          allowed_multiple: >
             major
             minor
             patch
