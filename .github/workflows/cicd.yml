@@ -38,17 +38,11 @@ jobs:
     env:
       DEBUG: "semantic_release.*"
     steps:
-      - name: "Checks-out GitHub Repository"
-        uses: actions/checkout@v2
-
-      - name: "Setup Python 3.8"
-        uses: actions/setup-python@v2
+      - id: bump
+        uses: zwaldowski/match-label-action@v1
         with:
-          python-version: 3.8
-
-      - name: "Semantic Release"
-        run: |
-          pip install python-semantic-release
-          git config user.name github-actions
-          git config user.email github-actions@github.com
-          semantic-release publish
+          allowed: major,minor,patch
+      - uses: zwaldowski/semver-release-action@v1
+        with:
+          bump: ${{ steps.bump.outputs.match }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
