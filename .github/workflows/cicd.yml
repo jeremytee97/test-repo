@@ -38,9 +38,13 @@ jobs:
       DEBUG: "semantic_release.*"
     steps:
       - id: bump
-        uses: jeremytee97/match-label-action@v7
+        uses: zwaldowski/match-label-action@v2
         with:
-          allowed: major,minor,enhancement
+          allowed: >
+            major
+            minor
+            patch
+
 
       - uses: zwaldowski/semver-release-action@v2
         with:
